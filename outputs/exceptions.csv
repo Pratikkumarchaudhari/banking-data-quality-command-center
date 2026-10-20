@@ -1,0 +1,68 @@
+row_number,institution_id,bureau,rule,dimension,severity,action
+1,SYN0001,Community Banking,required_name,Completeness,3,Supply institution name
+1,SYN0001,Community Banking,valid_email,Validity,2,Confirm contact email
+1,SYN0001,Community Banking,valid_state,Validity,2,Use a supported two-letter state code
+1,SYN0001,Community Banking,valid_status,Validity,3,Review license status
+1,SYN0001,Community Banking,fresh_record,Timeliness,1,Verify record within 90 days
+12,SYN0012,Mortgage Banking,valid_email,Validity,2,Confirm contact email
+18,SYN0018,Foreign Banking,required_name,Completeness,3,Supply institution name
+19,SYN0019,Licensed Services,unique_id,Uniqueness,4,Resolve duplicate institution identifier
+20,SYN0019,Banking Operations,unique_id,Uniqueness,4,Resolve duplicate institution identifier
+23,SYN0023,Foreign Banking,valid_email,Validity,2,Confirm contact email
+24,SYN0024,Licensed Services,fresh_record,Timeliness,1,Verify record within 90 days
+30,SYN0030,Banking Operations,valid_state,Validity,2,Use a supported two-letter state code
+34,SYN0034,Licensed Services,valid_email,Validity,2,Confirm contact email
+35,SYN0035,Banking Operations,required_name,Completeness,3,Supply institution name
+38,SYN0038,Foreign Banking,valid_status,Validity,3,Review license status
+45,SYN0045,Banking Operations,valid_email,Validity,2,Confirm contact email
+47,SYN0047,Mortgage Banking,fresh_record,Timeliness,1,Verify record within 90 days
+52,SYN0052,Mortgage Banking,required_name,Completeness,3,Supply institution name
+56,SYN0056,Community Banking,valid_email,Validity,2,Confirm contact email
+59,SYN0059,Licensed Services,valid_state,Validity,2,Use a supported two-letter state code
+67,SYN0067,Mortgage Banking,valid_email,Validity,2,Confirm contact email
+69,SYN0069,Licensed Services,required_name,Completeness,3,Supply institution name
+70,SYN0070,Banking Operations,fresh_record,Timeliness,1,Verify record within 90 days
+75,SYN0075,Banking Operations,valid_status,Validity,3,Review license status
+78,SYN0078,Foreign Banking,valid_email,Validity,2,Confirm contact email
+86,SYN0086,Community Banking,required_name,Completeness,3,Supply institution name
+88,SYN0088,Foreign Banking,valid_state,Validity,2,Use a supported two-letter state code
+89,SYN0089,Licensed Services,valid_email,Validity,2,Confirm contact email
+93,SYN0093,Foreign Banking,fresh_record,Timeliness,1,Verify record within 90 days
+100,SYN0100,Banking Operations,valid_email,Validity,2,Confirm contact email
+103,SYN0103,Foreign Banking,required_name,Completeness,3,Supply institution name
+111,SYN0111,Community Banking,valid_email,Validity,2,Confirm contact email
+112,SYN0112,Mortgage Banking,valid_status,Validity,3,Review license status
+116,SYN0116,Community Banking,fresh_record,Timeliness,1,Verify record within 90 days
+117,SYN0117,Mortgage Banking,valid_state,Validity,2,Use a supported two-letter state code
+120,SYN0120,Banking Operations,required_name,Completeness,3,Supply institution name
+122,SYN0122,Mortgage Banking,valid_email,Validity,2,Confirm contact email
+133,SYN0133,Foreign Banking,valid_email,Validity,2,Confirm contact email
+137,SYN0137,Mortgage Banking,required_name,Completeness,3,Supply institution name
+139,SYN0139,Licensed Services,fresh_record,Timeliness,1,Verify record within 90 days
+144,SYN0144,Licensed Services,valid_email,Validity,2,Confirm contact email
+146,SYN0146,Community Banking,valid_state,Validity,2,Use a supported two-letter state code
+149,SYN0149,Licensed Services,valid_status,Validity,3,Review license status
+154,SYN0154,Licensed Services,required_name,Completeness,3,Supply institution name
+155,SYN0155,Banking Operations,valid_email,Validity,2,Confirm contact email
+162,SYN0162,Mortgage Banking,fresh_record,Timeliness,1,Verify record within 90 days
+166,SYN0166,Community Banking,valid_email,Validity,2,Confirm contact email
+171,SYN0171,Community Banking,required_name,Completeness,3,Supply institution name
+175,SYN0175,Banking Operations,valid_state,Validity,2,Use a supported two-letter state code
+177,SYN0177,Mortgage Banking,valid_email,Validity,2,Confirm contact email
+185,SYN0185,Banking Operations,fresh_record,Timeliness,1,Verify record within 90 days
+186,SYN0186,Community Banking,valid_status,Validity,3,Review license status
+188,SYN0188,Foreign Banking,required_name,Completeness,3,Supply institution name
+188,SYN0188,Foreign Banking,valid_email,Validity,2,Confirm contact email
+199,SYN0199,Licensed Services,valid_email,Validity,2,Confirm contact email
+204,SYN0204,Licensed Services,valid_state,Validity,2,Use a supported two-letter state code
+205,SYN0205,Banking Operations,required_name,Completeness,3,Supply institution name
+208,SYN0208,Foreign Banking,fresh_record,Timeliness,1,Verify record within 90 days
+210,SYN0210,Banking Operations,valid_email,Validity,2,Confirm contact email
+221,SYN0221,Community Banking,valid_email,Validity,2,Confirm contact email
+222,SYN0222,Mortgage Banking,required_name,Completeness,3,Supply institution name
+223,SYN0223,Foreign Banking,valid_status,Validity,3,Review license status
+231,SYN0231,Community Banking,fresh_record,Timeliness,1,Verify record within 90 days
+232,SYN0232,Mortgage Banking,valid_email,Validity,2,Confirm contact email
+233,SYN0233,Foreign Banking,valid_state,Validity,2,Use a supported two-letter state code
+239,SYN0239,Licensed Services,required_name,Completeness,3,Supply institution name
+243,SYN0243,Foreign Banking,valid_email,Validity,2,Confirm contact email

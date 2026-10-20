@@ -1,0 +1,46 @@
+{
+  "data_type": "Synthetic demonstration",
+  "as_of": "2026-09-30",
+  "records": 250,
+  "failed_records": 62,
+  "exceptions": 67,
+  "rule_checks": 1750,
+  "pass_rate": 96.17,
+  "weighted_quality_score": 96.86,
+  "by_rule": {
+    "required_name": 15,
+    "valid_email": 23,
+    "valid_state": 9,
+    "valid_status": 7,
+    "unique_id": 2,
+    "fresh_record": 11,
+    "valid_id": 0
+  },
+  "by_bureau": [
+    {
+      "bureau": "Banking Operations",
+      "records": 50,
+      "score": 96.84
+    },
+    {
+      "bureau": "Community Banking",
+      "records": 50,
+      "score": 96.63
+    },
+    {
+      "bureau": "Foreign Banking",
+      "records": 50,
+      "score": 96.74
+    },
+    {
+      "bureau": "Licensed Services",
+      "records": 50,
+      "score": 96.84
+    },
+    {
+      "bureau": "Mortgage Banking",
+      "records": 50,
+      "score": 97.26
+    }
+  ]
+}
