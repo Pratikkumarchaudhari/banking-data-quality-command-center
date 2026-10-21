@@ -1,5 +1,7 @@
 # Interview walkthrough: Banking Data Quality Monitoring Dashboard
 
+For rule-level definitions, platform details, column coverage, and record investigation, read the [Dashboard details guide](DASHBOARD_GUIDE.md).
+
 ## 60-second explanation
 
 “This is an independent portfolio project connecting my data stewardship experience with hands-on Python analysis. The question is: which records should a steward investigate first? I used synthetic data so the work is reproducible and shareable. 250 synthetic records; 67 exceptions affecting 62 records; 96.17% rule-check pass rate. No remediation or employer impact is claimed. I would validate the assumptions and outputs with a business owner before applying the method to real data.”

@@ -42,5 +42,290 @@
       "records": 50,
       "score": 97.26
     }
-  ]
+  ],
+  "passed_records": 188,
+  "passed_checks": 1683,
+  "input_columns": 7,
+  "evaluated_columns": 6,
+  "rules_total": 7,
+  "rules_failed": 6,
+  "rules_passed": 1,
+  "rule_catalog": [
+    {
+      "rule": "required_name",
+      "rule_id": "DQ001",
+      "column": "name",
+      "title": "Institution name is required",
+      "expected": "Trimmed name must be nonblank",
+      "logic": "bool(trimmed name)",
+      "dimension": "Completeness",
+      "weight": 3,
+      "action": "Supply institution name",
+      "checked": 250,
+      "failed": 15,
+      "passed": 235,
+      "pass_rate": 94.0,
+      "status": "Failed",
+      "platform": "Python / Pandas",
+      "implementation": "pipeline.py:evaluate"
+    },
+    {
+      "rule": "valid_email",
+      "rule_id": "DQ002",
+      "column": "email",
+      "title": "Contact email has valid syntax",
+      "expected": "A nonblank email with no whitespace and a dotted domain",
+      "logic": "Regex: [^\\s@]+@[^\\s@]+\\.[^\\s@]+",
+      "dimension": "Validity",
+      "weight": 2,
+      "action": "Confirm contact email",
+      "checked": 250,
+      "failed": 23,
+      "passed": 227,
+      "pass_rate": 90.8,
+      "status": "Failed",
+      "platform": "Python / Pandas",
+      "implementation": "pipeline.py:evaluate"
+    },
+    {
+      "rule": "valid_state",
+      "rule_id": "DQ003",
+      "column": "state",
+      "title": "Jurisdiction code is supported",
+      "expected": "One of the configured two-letter US state/territory codes",
+      "logic": "state in STATES; case-sensitive",
+      "dimension": "Validity",
+      "weight": 2,
+      "action": "Use a supported two-letter state code",
+      "checked": 250,
+      "failed": 9,
+      "passed": 241,
+      "pass_rate": 96.4,
+      "status": "Failed",
+      "platform": "Python / Pandas",
+      "implementation": "pipeline.py:evaluate"
+    },
+    {
+      "rule": "valid_status",
+      "rule_id": "DQ004",
+      "column": "license_status",
+      "title": "License status is recognized",
+      "expected": "Active, Surrendered, or Suspended",
+      "logic": "status in {Active, Surrendered, Suspended}",
+      "dimension": "Validity",
+      "weight": 3,
+      "action": "Review license status",
+      "checked": 250,
+      "failed": 7,
+      "passed": 243,
+      "pass_rate": 97.2,
+      "status": "Failed",
+      "platform": "Python / Pandas",
+      "implementation": "pipeline.py:evaluate"
+    },
+    {
+      "rule": "unique_id",
+      "rule_id": "DQ005",
+      "column": "institution_id",
+      "title": "Institution identifier is unique",
+      "expected": "Identifier occurs exactly once in this input",
+      "logic": "count(institution_id) == 1; flag every duplicate row",
+      "dimension": "Uniqueness",
+      "weight": 4,
+      "action": "Resolve duplicate institution identifier",
+      "checked": 250,
+      "failed": 2,
+      "passed": 248,
+      "pass_rate": 99.2,
+      "status": "Failed",
+      "platform": "Python / Pandas",
+      "implementation": "pipeline.py:evaluate"
+    },
+    {
+      "rule": "fresh_record",
+      "rule_id": "DQ006",
+      "column": "last_verified",
+      "title": "Record was verified within 90 days",
+      "expected": "Valid ISO date with age from 0 through 90 days as of the evaluation date",
+      "logic": "0 <= (as_of - parsed_date).days <= 90",
+      "dimension": "Timeliness",
+      "weight": 1,
+      "action": "Verify record within 90 days",
+      "checked": 250,
+      "failed": 11,
+      "passed": 239,
+      "pass_rate": 95.6,
+      "status": "Failed",
+      "platform": "Python / Pandas",
+      "implementation": "pipeline.py:evaluate"
+    },
+    {
+      "rule": "valid_id",
+      "rule_id": "DQ007",
+      "column": "institution_id",
+      "title": "Institution identifier is present",
+      "expected": "Trimmed identifier must be nonblank",
+      "logic": "bool(trimmed institution_id)",
+      "dimension": "Validity",
+      "weight": 4,
+      "action": "Supply nonblank institution identifier",
+      "checked": 250,
+      "failed": 0,
+      "passed": 250,
+      "pass_rate": 100.0,
+      "status": "Passed",
+      "platform": "Python / Pandas",
+      "implementation": "pipeline.py:evaluate"
+    }
+  ],
+  "column_profiles": [
+    {
+      "column": "institution_id",
+      "input_type": "String (normalized)",
+      "missing": 0,
+      "distinct": 249,
+      "rules": [
+        "DQ005",
+        "DQ007"
+      ],
+      "rule_checks": 500,
+      "failed_checks": 2,
+      "affected_records": 2,
+      "pass_rate": 99.6,
+      "coverage": "Evaluated"
+    },
+    {
+      "column": "name",
+      "input_type": "String (normalized)",
+      "missing": 15,
+      "distinct": 236,
+      "rules": [
+        "DQ001"
+      ],
+      "rule_checks": 250,
+      "failed_checks": 15,
+      "affected_records": 15,
+      "pass_rate": 94.0,
+      "coverage": "Evaluated"
+    },
+    {
+      "column": "bureau",
+      "input_type": "String (normalized)",
+      "missing": 0,
+      "distinct": 5,
+      "rules": [],
+      "rule_checks": 0,
+      "failed_checks": 0,
+      "affected_records": 0,
+      "pass_rate": null,
+      "coverage": "Context only \u2014 not evaluated"
+    },
+    {
+      "column": "email",
+      "input_type": "String (normalized)",
+      "missing": 0,
+      "distinct": 228,
+      "rules": [
+        "DQ002"
+      ],
+      "rule_checks": 250,
+      "failed_checks": 23,
+      "affected_records": 23,
+      "pass_rate": 90.8,
+      "coverage": "Evaluated"
+    },
+    {
+      "column": "state",
+      "input_type": "String (normalized)",
+      "missing": 0,
+      "distinct": 5,
+      "rules": [
+        "DQ003"
+      ],
+      "rule_checks": 250,
+      "failed_checks": 9,
+      "affected_records": 9,
+      "pass_rate": 96.4,
+      "coverage": "Evaluated"
+    },
+    {
+      "column": "license_status",
+      "input_type": "String (normalized)",
+      "missing": 0,
+      "distinct": 2,
+      "rules": [
+        "DQ004"
+      ],
+      "rule_checks": 250,
+      "failed_checks": 7,
+      "affected_records": 7,
+      "pass_rate": 97.2,
+      "coverage": "Evaluated"
+    },
+    {
+      "column": "last_verified",
+      "input_type": "String (normalized)",
+      "missing": 0,
+      "distinct": 2,
+      "rules": [
+        "DQ006"
+      ],
+      "rule_checks": 250,
+      "failed_checks": 11,
+      "affected_records": 11,
+      "pass_rate": 95.6,
+      "coverage": "Evaluated"
+    }
+  ],
+  "dimension_results": [
+    {
+      "dimension": "Completeness",
+      "rules": 1,
+      "checked": 250,
+      "failed": 15,
+      "passed": 235,
+      "affected_records": 15,
+      "pass_rate": 94.0
+    },
+    {
+      "dimension": "Validity",
+      "rules": 4,
+      "checked": 1000,
+      "failed": 39,
+      "passed": 961,
+      "affected_records": 37,
+      "pass_rate": 96.1
+    },
+    {
+      "dimension": "Uniqueness",
+      "rules": 1,
+      "checked": 250,
+      "failed": 2,
+      "passed": 248,
+      "affected_records": 2,
+      "pass_rate": 99.2
+    },
+    {
+      "dimension": "Timeliness",
+      "rules": 1,
+      "checked": 250,
+      "failed": 11,
+      "passed": 239,
+      "affected_records": 11,
+      "pass_rate": 95.6
+    }
+  ],
+  "platform": {
+    "rule_authoring": "Python rule definitions in pipeline.py",
+    "rule_execution": "Python / Pandas batch evaluation",
+    "reporting": "HTML / CSS / JavaScript",
+    "source_format": "CSV or deterministic in-memory sample",
+    "python": "3.12.14",
+    "pandas": "2.2.3",
+    "policy_version": "1.1",
+    "dataset_fingerprint": "49f52ba1f193a13edead0b837e0a1b8622a3a6879680b3f2a4d6783d5ed2f983",
+    "sql_role": "SQLite-compatible reference queries; not the dashboard execution engine",
+    "deployment": "Static sample dashboard; no connection to live bank or employer systems"
+  },
+  "source_name": "data/institutions.csv (generated synthetic sample)"
 }
